@@ -21,7 +21,7 @@ class Examples extends Component {
         <input value={this.state.a} onChange={(e)=>this.setState({a: e.target.value})}/> 
         + <input value={this.state.b} onChange={(e)=>this.setState({b: e.target.value})}/>
         = <span>{this.state.sum}</span>
-        <button onClick={() => this.setState({sum: Number(this.state.a) + Number(this.state.b)})}>Sum</button>
+        <button onClick={() => this.setState({sum: parseInt(this.state.a) + parseInt(this.state.b)})}>Sum</button>
         <p/>
       </div>
     )
