@@ -33,20 +33,24 @@ function ImageList(props) {
 import { connect } from 'react-redux'
 import { getRandomImages } from '../redux/actions/index'
 
-const mapStateToProps = (state, ownProps) => {
+/*const mapStateToProps = (state, ownProps) => {
   return {
     images: state.images
   }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    onRandomImages: () => dispatch(getRandomImages)    
-  }
-}
+}*/
+//
+//const mapDispatchToProps = (dispatch, ownProps) => {
+//  return {
+//    onRandomImages: () => dispatch(getRandomImages)
+//  }
+//}
 const RandomImagesContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+    (state, ownProps) => ({
+        images: state.images
+    }),
+    {
+        onRandomImages: getRandomImages
+    }
 )(RandomImages)
 
 export default RandomImagesContainer
